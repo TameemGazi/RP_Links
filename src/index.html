@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Repository</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Research Repository</h1>
+    <div id="upload-section">
+        <h2>Store Research Paper</h2>
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".pdf" required />
+            <button type="submit">Upload</button>
+        </form>          
+    </div>
+    <h2>Retrieve Stored Files</h2>
+    
+    <form id="getFilesForm" action="/getFiles" method="POST">
+        <input type="text" id="userAddress" name="userAddress" placeholder="Enter Educhain Address" required>
+        <button type="submit">Get Files</button>
+    </form>
+
+    <h3>Stored Files:</h3>
+    <ul id="fileLinks"></ul>
+
+    <script>
+        document.getElementById('getFilesForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const userAddress = document.getElementById('userAddress').value;
+
+            try {
+                const response = await fetch('/getFiles', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ userAddress: userAddress })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    const ipfsLinks = data.ipfsLinks;
+
+                    const fileLinksUl = document.getElementById('fileLinks');
+                    fileLinksUl.innerHTML = ''; // Clear previous links
+
+                    ipfsLinks.forEach(link => {
+                        const li = document.createElement('li');
+                        const a = document.createElement('a');
+                        a.href = link;
+                        a.textContent = link;
+                        a.target = '_blank';
+                        li.appendChild(a);
+                        fileLinksUl.appendChild(li);
+                    });
+                } else {
+                    console.error('Failed to fetch IPFS links');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+/* style.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 ,h3 {
+    color: #000000;
+    text-align: center;
+}
+
+/* Container Styles */
+#upload-section, #files-section {
+    background: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 20px;
+}
+
+#upload-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Button Styles */
+button {
+    background-color: #DC143C;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* File Input Styles */
+input[type="file"] {
+    margin: 10px 0;
+}
+
+/* File List Styles */
+#fileList {
+    list-style: none;
+    padding: 0;
+}
+
+#fileList li {
+    background-color: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#fileList li:hover {
+    background-color: #bdc3c7;
+    cursor: pointer;
+}
+
+/* Additional styles for the form and list under h3 and h4 */
+#getFilesForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#getFilesForm input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+}
+
+#getFilesForm button {
+    background-color: #DC143C;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#getFilesForm button:hover {
+    background-color: #2980b9;
+}
+
+#fileLinks {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#fileLinks li {
+    background-color: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 80%;
+    cursor: pointer;
+}
+
+#fileLinks li:hover {
+    background-color: #bdc3c7;
+}
