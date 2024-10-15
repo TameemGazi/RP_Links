@@ -1,5 +1,5 @@
 ## Idea
-Research Repository
+Research Repository on blockchain
 
 ## Description	
 A repository for academic research papers, ensuring immutability and accessibility.
@@ -25,4 +25,4 @@ To start the application, run:
 node server.js
 ```
 
-Open your browser and navigate to `http://localhost:5500` to access EDU.RP
+Open your browser and navigate to `http://localhost:5500` to access RP_Links
